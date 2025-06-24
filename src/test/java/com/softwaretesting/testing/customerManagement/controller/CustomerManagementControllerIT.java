@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @AutoConfigureWebTestClient
-class CustomerManagementControllerTest {
+class CustomerManagementControllerIT {
 
     @Autowired
     private WebTestClient client;
