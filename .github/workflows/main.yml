@@ -85,7 +85,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Run PIT Mutation Coverage
-        run: mvn test-compile org.pitest:pitest-maven:mutationCoverage
+        run: mvn test org.pitest:pitest-maven:mutationCoverage
       - name: Upload PIT Report
         uses: actions/upload-artifact@v4
         with:
