@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PhoneNumberValidator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing</a> &gt; <a href="index.source.html" class="el_package">com.softwaretesting.testing.validator</a> &gt; <span class="el_source">PhoneNumberValidator.java</span></div><h1>PhoneNumberValidator.java</h1><pre class="source lang-java linenums">package com.softwaretesting.testing.validator;
+
+import org.springframework.stereotype.Service;
+
+// Validates international phone numbers according to the E.164 standard.
+// Rules:
+// - Must start with a plus sign (+)
+// - First digit after the plus must be between 1-9 (no leading zero)
+// - Only digits allowed after the plus
+// - Maximum total length of 15 digits
+//
+// Sources used:
+// - https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/start.html
+// - https://en.wikipedia.org/wiki/E.164
+//
+// Additional Notes:
+// - This validator checks only the international format (+49... for Germany).
+// - Specific national numbering structures (e.g., local area codes, service numbers)
+//   are NOT considered in this validation.
+// - For more information about German national numbering structures,
+//   refer to the Bundesnetzagentur numbering plan (Nummernraum PDF):
+//   https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Nummerierung/_DL/np_nummernraum.pdf?__blob=publicationFile&amp;v=1
+@Service
+<span class="fc" id="L24">public class PhoneNumberValidator {</span>
+
+    public boolean validate(String phoneNumber){
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (phoneNumber == null)</span>
+<span class="fc" id="L28">            throw new NullPointerException(&quot;Phone number must not be null&quot;);</span>
+
+<span class="fc" id="L30">        return phoneNumber.matches(&quot;\\+[1-9][0-9]{1,13}$&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

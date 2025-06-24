@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerManagementController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing</a> &gt; <a href="index.source.html" class="el_package">com.softwaretesting.testing.customerManagement.controller</a> &gt; <span class="el_source">CustomerManagementController.java</span></div><h1>CustomerManagementController.java</h1><pre class="source lang-java linenums">package com.softwaretesting.testing.customerManagement.controller;
+
+import com.softwaretesting.testing.customerManagement.service.CustomerManagementService;
+import com.softwaretesting.testing.model.Customer;
+import com.softwaretesting.testing.dto.inbound.CustomerInDTO;
+import com.softwaretesting.testing.dto.outbound.CustomerOutDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/v1/customers&quot;)
+public class CustomerManagementController {
+
+    @Autowired
+    private CustomerManagementService customerManagementService;
+
+<span class="nc" id="L23">    public CustomerManagementController() {}</span>
+
+    @GetMapping(&quot;list&quot;)
+    public List&lt;CustomerOutDTO&gt; list() {
+<span class="nc" id="L27">        Collection&lt;Customer&gt; customersIterable = customerManagementService.list();</span>
+<span class="nc" id="L28">        List&lt;CustomerOutDTO&gt; outDTOs = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L29">        customersIterable.forEach(entry -&gt; outDTOs.add(new CustomerOutDTO(entry)));</span>
+<span class="nc" id="L30">        return outDTOs;</span>
+    }
+
+    @GetMapping(&quot;{cid}&quot;)
+    public CustomerOutDTO getById(@PathVariable(&quot;cid&quot;) Long id) {
+<span class="nc" id="L35">        Customer customer = customerManagementService.findById(id);</span>
+<span class="nc" id="L36">        return new CustomerOutDTO(customer);</span>
+    }
+
+    @PostMapping
+    public CustomerOutDTO addCustomer(@RequestBody CustomerInDTO dto) {
+<span class="nc" id="L41">        Customer customer = dto.toEntity();</span>
+<span class="nc" id="L42">        customerManagementService.addCustomer(customer);</span>
+<span class="nc" id="L43">        return new CustomerOutDTO(customer);</span>
+    }
+
+    @DeleteMapping(&quot;{cid}&quot;)
+    public ResponseEntity&lt;?&gt; delete(@PathVariable(&quot;cid&quot;) Long id) {
+<span class="nc" id="L48">        customerManagementService.delete(id);</span>
+<span class="nc" id="L49">        return new ResponseEntity&lt;&gt;(HttpStatus.OK);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

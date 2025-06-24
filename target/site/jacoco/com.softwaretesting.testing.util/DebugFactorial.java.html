@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DebugFactorial.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing</a> &gt; <a href="index.source.html" class="el_package">com.softwaretesting.testing.util</a> &gt; <span class="el_source">DebugFactorial.java</span></div><h1>DebugFactorial.java</h1><pre class="source lang-java linenums">package com.softwaretesting.testing.util;
+
+<span class="nc" id="L3">public class DebugFactorial {</span>
+
+    // Java program to find factorial of given number
+
+    // Method to find factorial of given number
+    static int factorial(int n)
+    {
+<span class="nc" id="L10">        int res = 1;</span>
+        int i;
+<span class="nc bnc" id="L12" title="All 2 branches missed.">        for (i=2; i&lt; n; i++)</span>
+<span class="nc" id="L13">            res *= i;</span>
+<span class="nc" id="L14">        return res;</span>
+    }
+
+        // Driver method
+    public static void main(String[] args)
+    {
+<span class="nc" id="L20">        int num = 5;</span>
+<span class="nc" id="L21">        System.out.println(&quot;Factorial of &quot;+ num + &quot; is &quot; + factorial(5));</span>
+<span class="nc" id="L22">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

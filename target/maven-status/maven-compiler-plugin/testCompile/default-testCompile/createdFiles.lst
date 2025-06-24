@@ -1,0 +1,8 @@
+com/softwaretesting/testing/customerRegistration/service/CustomerRegistrationServiceDiffblueTest.class
+com/softwaretesting/testing/util/MiscDiffblueTest.class
+com/softwaretesting/testing/model/CustomerDiffblueTest.class
+com/softwaretesting/testing/validator/CustomerValidatorDiffblueTest.class
+com/softwaretesting/testing/validator/PhoneNumberValidatorDiffblueTest.class
+com/softwaretesting/testing/util/DebugFactorialDiffblueTest.class
+com/softwaretesting/testing/dao/CustomerRepositoryDiffblueTest.class
+com/softwaretesting/testing/customerManagement/service/CustomerManagementServiceImpDiffblueTest.class

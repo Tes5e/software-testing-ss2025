@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+testing,com.softwaretesting.testing.customerRegistration.controller,CustomerRegistrationController,19,0,0,0,6,0,2,0,2,0
+testing,com.softwaretesting.testing.model,Customer,54,71,13,1,6,19,9,11,2,11
+testing,com.softwaretesting.testing,TestingApplication,5,3,0,0,2,1,1,1,1,1
+testing,com.softwaretesting.testing.customerManagement.service,CustomerManagementServiceImp,0,108,0,4,0,23,0,10,0,8
+testing,com.softwaretesting.testing.config,PopulateDatabase,55,0,0,0,16,0,3,0,3,0
+testing,com.softwaretesting.testing.dto.inbound,CustomerInDTO,42,0,0,0,15,0,8,0,8,0
+testing,com.softwaretesting.testing.customerRegistration.service,CustomerRegistrationService,0,43,0,4,0,11,0,4,0,2
+testing,com.softwaretesting.testing.validator,CustomerValidator,0,19,0,2,0,5,0,3,0,2
+testing,com.softwaretesting.testing.validator,PhoneNumberValidator,0,14,0,2,0,4,0,3,0,2
+testing,com.softwaretesting.testing.util,DebugFactorial,27,0,2,0,8,0,4,0,3,0
+testing,com.softwaretesting.testing.util,Misc.Color,0,21,0,0,0,4,0,1,0,1
+testing,com.softwaretesting.testing.util,Misc,5,78,1,17,2,20,2,14,1,6
+testing,com.softwaretesting.testing.exception,CustomerNotFoundException,0,4,0,0,0,2,0,1,0,1
+testing,com.softwaretesting.testing.exception,BadRequestException,0,4,0,0,0,2,0,1,0,1
+testing,com.softwaretesting.testing.dto.outbound,CustomerOutDTO,62,0,0,0,23,0,10,0,10,0
+testing,com.softwaretesting.testing.customerManagement.controller,CustomerManagementController,57,0,0,0,12,0,6,0,6,0

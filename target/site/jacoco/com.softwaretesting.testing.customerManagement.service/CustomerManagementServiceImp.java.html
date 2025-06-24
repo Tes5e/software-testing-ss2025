@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerManagementServiceImp.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing</a> &gt; <a href="index.source.html" class="el_package">com.softwaretesting.testing.customerManagement.service</a> &gt; <span class="el_source">CustomerManagementServiceImp.java</span></div><h1>CustomerManagementServiceImp.java</h1><pre class="source lang-java linenums">package com.softwaretesting.testing.customerManagement.service;
+
+import com.softwaretesting.testing.model.Customer;
+import com.softwaretesting.testing.exception.BadRequestException;
+import com.softwaretesting.testing.exception.CustomerNotFoundException;
+import com.softwaretesting.testing.dao.CustomerRepository;
+import com.softwaretesting.testing.validator.CustomerValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+@Service
+<span class="fc" id="L19">public class CustomerManagementServiceImp implements CustomerManagementService {</span>
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Autowired
+    private CustomerValidator customerValidator;
+
+
+    @Transactional(readOnly = true)
+    @Override
+    public Collection&lt;Customer&gt; list() {
+<span class="fc" id="L30">        return StreamSupport.stream(customerRepository.findAll().spliterator(), false)</span>
+<span class="fc" id="L31">                .collect(Collectors.toSet());</span>
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Customer findByUserName(String userName) {
+<span class="fc" id="L37">        Optional&lt;Customer&gt; customer = customerRepository.findByUserName(userName);</span>
+
+<span class="fc" id="L39">        customerValidator.validate404(customer, &quot;User-Name&quot;, userName);</span>
+
+<span class="fc" id="L41">        return customer.get();</span>
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Customer findById(Long id) {
+<span class="fc" id="L47">        Optional&lt;Customer&gt; customer = customerRepository.findById(id);</span>
+
+<span class="fc" id="L49">        customerValidator.validate404(customer, &quot;id&quot;, String.valueOf(id));</span>
+
+<span class="fc" id="L51">        return customer.get();</span>
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Customer selectCustomerByPhoneNumber(String phoneNumber) {
+<span class="fc" id="L57">        Optional&lt;Customer&gt; customer = customerRepository.selectCustomerByPhoneNumber(phoneNumber);</span>
+
+<span class="fc" id="L59">        customerValidator.validate404(customer, &quot;phone number&quot;, phoneNumber);</span>
+
+<span class="fc" id="L61">        return customer.get();</span>
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void delete(Long customerId) {
+
+
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if(!customerRepository.existsById(customerId)) {</span>
+<span class="fc" id="L70">            throw new CustomerNotFoundException(</span>
+                    &quot;Customer with id &quot; + customerId + &quot; does not exists&quot;);
+        }
+
+<span class="fc" id="L74">        customerRepository.deleteById(customerId);</span>
+<span class="fc" id="L75">    }</span>
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public Customer addCustomer(Customer customer) {
+<span class="fc" id="L80">        Optional&lt;Customer&gt; existsPhoneNumber = customerRepository.selectCustomerByPhoneNumber(customer.getPhoneNumber());</span>
+
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        if (existsPhoneNumber.isPresent()) {</span>
+<span class="fc" id="L83">            throw new BadRequestException(</span>
+<span class="fc" id="L84">                    &quot;Phone Number &quot; + customer.getPhoneNumber() + &quot; taken&quot;);</span>
+        }
+<span class="fc" id="L86">        return customerRepository.save(customer);</span>
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public Collection&lt;Customer&gt; saveAll(List&lt;Customer&gt; customers) {
+<span class="fc" id="L92">        return StreamSupport.stream(customerRepository.saveAll(customers).spliterator(), false)</span>
+<span class="fc" id="L93">                .collect(Collectors.toSet());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,17 @@
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/dto/inbound/CustomerInDTO.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/validator/PhoneNumberValidator.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/dto/outbound/CustomerOutDTO.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/exception/BadRequestException.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/model/Customer.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/validator/CustomerValidator.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/util/DebugFactorial.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/config/PopulateDatabase.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/customerManagement/service/CustomerManagementServiceImp.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/exception/CustomerNotFoundException.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/util/Misc.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/dao/CustomerRepository.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/customerManagement/service/CustomerManagementService.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/TestingApplication.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/customerRegistration/service/CustomerRegistrationService.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/customerManagement/controller/CustomerManagementController.java
+/Applications/git/software-testing-ss2025/src/main/java/com/softwaretesting/testing/customerRegistration/controller/CustomerRegistrationController.java

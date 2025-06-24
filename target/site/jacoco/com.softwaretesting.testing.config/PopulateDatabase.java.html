@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PopulateDatabase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing</a> &gt; <a href="index.source.html" class="el_package">com.softwaretesting.testing.config</a> &gt; <span class="el_source">PopulateDatabase.java</span></div><h1>PopulateDatabase.java</h1><pre class="source lang-java linenums">/**
+ * The Spring Boot app triggers the run method on successful start up and 
+ * the code basically initializes the in-memory h2 databsae with 20K records. 
+ * 
+ *
+ */
+
+package com.softwaretesting.testing.config;
+
+import com.softwaretesting.testing.model.Customer;
+import com.softwaretesting.testing.customerManagement.service.CustomerManagementService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
+@Component
+public class PopulateDatabase implements ApplicationRunner {
+<span class="nc" id="L25">	Logger logger = LoggerFactory.getLogger(PopulateDatabase.class);</span>
+
+	private CustomerManagementService customerManagementService;
+
+	@Autowired
+<span class="nc" id="L30">	public PopulateDatabase(CustomerManagementService customerManagementService) {</span>
+<span class="nc" id="L31">		this.customerManagementService = customerManagementService;</span>
+<span class="nc" id="L32">	}</span>
+	
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+<span class="nc" id="L36">		logger.debug(&quot;Populating the database with 20K Dummy Records ... In Progress&quot;);</span>
+<span class="nc" id="L37">		List&lt;Customer&gt; customers = new ArrayList&lt;&gt;();</span>
+		
+<span class="nc" id="L39">		IntStream.range(1,20000).forEach(id -&gt; {</span>
+<span class="nc" id="L40">			Customer customer = new Customer();</span>
+<span class="nc" id="L41">			customer.setUserName(&quot;f&quot; + id);</span>
+<span class="nc" id="L42">			customer.setName(&quot;l&quot; + id);</span>
+<span class="nc" id="L43">			customer.setPhoneNumber(&quot;+49000&quot; + id);</span>
+			
+<span class="nc" id="L45">			customers.add(customer);</span>
+<span class="nc" id="L46">		});</span>
+
+<span class="nc" id="L48">		customerManagementService.saveAll(customers);</span>
+		
+<span class="nc" id="L50">		logger.debug(&quot;Database filled up!&quot;);</span>
+<span class="nc" id="L51">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
