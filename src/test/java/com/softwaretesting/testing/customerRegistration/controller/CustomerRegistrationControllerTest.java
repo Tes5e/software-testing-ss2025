@@ -1,60 +1,87 @@
 package com.softwaretesting.testing.customerRegistration.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.softwaretesting.testing.customerRegistration.service.CustomerRegistrationService;
-import com.softwaretesting.testing.dto.outbound.CustomerOutDTO;
-import com.softwaretesting.testing.exception.BadRequestException;
+import com.softwaretesting.testing.dao.CustomerRepository;
 import com.softwaretesting.testing.model.Customer;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.web.reactive.function.BodyInserters;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
-@WebMvcTest(CustomerRegistrationController.class)
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@AutoConfigureWebTestClient
 class CustomerRegistrationControllerTest {
 
     @Autowired
-    private MockMvc _mockMvc;
-
-    @MockBean
-    private CustomerRegistrationService _customerRegistrationService;
-
+    private WebTestClient client;
     @Autowired
-    private ObjectMapper _objectMapper;
+    private CustomerRepository repository;
 
     @Test
-    void registerNewCustomer() throws Exception {
-        var dto = new CustomerOutDTO( 2009L,"Max.M", "Max Mustermann", "+491234567");
-        var customer = new Customer(2009L,"Max.M", "Max Mustermann", "+491234567");
+    @DisplayName("POST /api/v1/customer-registration/ should create a customer and return 200 with correct data")
+    @DirtiesContext
+        // resets server context after test
+    void shouldCreateCustomerSuccessfully() {
+        String requestBody = "{\"userName\":\"testUserName\",\"name\":\"testName\",\"phoneNumber\":\"+49000000042\"}";
 
-        when(_customerRegistrationService.registerNewCustomer(any(Customer.class))).thenReturn(customer);
-
-        _mockMvc.perform(post("/api/v1/customer-registration")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(_objectMapper.writeValueAsString(dto)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.userName").value("Max.M"))
-                .andExpect(jsonPath("$.name").value("Max Mustermann"))
-                .andExpect(jsonPath("$.phoneNumber").value("+491234567"));
+        client.post()
+                .uri("/api/v1/customer-registration/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromObject(requestBody))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody()
+                .jsonPath("$.id").exists()
+                .jsonPath("$.userName").isEqualTo("testUserName")
+                .jsonPath("$.name").isEqualTo("testName")
+                .jsonPath("$.phoneNumber").isEqualTo("+49000000042");
     }
 
     @Test
-    void registerNewCustomerPhoneNumberAlreadyTaken() throws Exception{
-        var dto = new CustomerOutDTO( 2009L,"Max.M", "Max Mustermann", "+491234567");
+    @DisplayName("POST /api/v1/customer-registration/ should return 400 when given a taken phone number")
+    @DirtiesContext
+    void testAddCustomerWithTakenNumberReturns400() {
+        String requestBody = "{\"userName\":\"testUserName\",\"name\":\"testName\",\"phoneNumber\":\"+490009890\"}";
 
-        when(_customerRegistrationService.registerNewCustomer(any(Customer.class)))
-                .thenThrow( new BadRequestException("Phone Number +491234567 taken"));
+        client.post()
+                .uri("/api/v1/customer-registration/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromObject(requestBody))
+                .exchange()
+                .expectStatus().isBadRequest();
+    }
 
-        _mockMvc.perform(post("/api/v1/customer-registration")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(_objectMapper.writeValueAsString(dto)))
-                .andExpect(status().isBadRequest());
+    @Test
+    @DisplayName("POST /api/v1/customer-registration/ should add customer to repository")
+    @DirtiesContext
+    void testAddCustomerIsAddedToRepository() {
+        String requestBody = "{\"userName\":\"testUserName\",\"name\":\"testName\",\"phoneNumber\":\"+49000000042\"}";
+
+        AtomicLong createdCustomerId = new AtomicLong();
+        client.post()
+                .uri("/api/v1/customer-registration/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromObject(requestBody))
+                .exchange()
+                .expectBody()
+                .jsonPath("$.id")
+                .value(id -> createdCustomerId.set(((Number) id).longValue()));
+
+        Optional<Customer> customer = repository.findById(createdCustomerId.get());
+
+        assertTrue(customer.isPresent());
+        assertEquals("testUserName", customer.get().getUserName());
+        assertEquals("testName", customer.get().getName());
+        assertEquals("+49000000042", customer.get().getPhoneNumber());
     }
 }
