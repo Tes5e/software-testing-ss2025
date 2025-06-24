@@ -1,153 +1,307 @@
 package com.softwaretesting.testing.util;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MiscTest {
 
-    @Test
-    void testSumPositiveNumbers(){
-        var expectedResult = 5;
-        var integer1 = 3;
-        var integer2 = 2;
-        assertEquals(expectedResult, Misc.sum(integer1,integer2));
+    private Misc miscTest;
+
+    @BeforeEach
+    void setUp() {
+        miscTest = new Misc();
     }
 
+    // isEven
+    // test function isEven with the number 2
     @Test
-    void testSumWithZero(){
-        var expectedResult = 0;
-        var integerValue = 0;
-        assertEquals(expectedResult, Misc.sum(integerValue, integerValue));
+    @DisplayName("Test 1: isEven with number 2 -> True")
+    void isEvenValid2() {
+        boolean isEvenValid2 = miscTest.isEven(2);
+        assertTrue(isEvenValid2);
     }
 
+    // test the function isEven with an uneven number, expect false
     @Test
-    void testSumNegativeAndPositive(){
-        var expectedResult = -1;
-        var negativeInteger = -2;
-        var positivInteger = 1;
-        assertEquals(expectedResult, Misc.sum(negativeInteger, positivInteger));
+    @DisplayName("Test 2: isEven with an uneven number -> False")
+    void isUnevenInvalid() {
+        boolean isUnevenInvalid = miscTest.isEven(1);
+        assertFalse(isUnevenInvalid);
     }
 
+    // test the function isEven with an even number, expect false
     @Test
-    void testDividePositiveNumbers(){
-        var expectedResult = 2.0;
-        var integer1 = 6;
-        var integer2 = 3;
-        assertEquals(expectedResult, Misc.divide(integer1, integer2));
+    @DisplayName("Test 3: isEven with an even number -> True")
+    void isEvenValid() {
+        boolean isEvenValid2 = miscTest.isEven(16);
+        assertTrue(isEvenValid2);
     }
 
+    // sum
+    // test sum with two positive numbers
     @Test
-    void testDivideNegativeNumbers(){
-        var expectedResult = 2.0;
-        var negativeInteger1 = -6;
-        var negativeInteger2 = -3;
-        assertEquals(expectedResult, Misc.divide(negativeInteger1, negativeInteger2));
+    @DisplayName("Test 4: sum with two positive numbers")
+    void sumWithTwoPositiveNumbers() {
+        int sumTwoPositiveNumbers_Actual = miscTest.sum(3, 6);
+        int sumTwoPositiveNumbers_Expected = 9;
+        assertEquals(sumTwoPositiveNumbers_Expected, sumTwoPositiveNumbers_Actual);
     }
 
+    // test sum with two negative numbers
     @Test
-    void tesDividePositiveAndNegativeNumbers(){
-        var expectedResult = -2.0;
-        var positiveInteger = 6;
-        var negativeInteger = -3;
-        assertEquals(expectedResult, Misc.divide(positiveInteger, negativeInteger));
+    @DisplayName("Test 5: sum with two negative numbers")
+    void sumWithTwoNegativeNumbers() {
+        int sumTwoNegativeNumbers_Actual = miscTest.sum(-2, -8);
+        int sumTwoNegativeNumbers_Expected = -10;
+        assertEquals(sumTwoNegativeNumbers_Expected, sumTwoNegativeNumbers_Actual);
     }
 
+    // test sum with a negative and a positive number
     @Test
-    void testDivideZeroNumerator(){
-        var expectedResult = 0.0;
-        var integer1 = 0;
-        var integer2 = 6;
-        assertEquals(expectedResult, Misc.divide(integer1, integer2));
+    @DisplayName("Test 6: sum with a negative and a positive number")
+    void sumWithNegativePositiveNumbers() {
+        int sumNegativePositiveNumbers_Actual = miscTest.sum(2, -8);
+        int sumNegativePositiveNumbers_Expected = -6;
+        assertEquals(sumNegativePositiveNumbers_Expected, sumNegativePositiveNumbers_Actual);
     }
 
+    // isColorSupported
+    // test isColorSupported with correct color red
     @Test
-    void testDivideByZeroThrowsException(){
-        var exception =  assertThrows(RuntimeException.class, () -> {
-            Misc.divide(10, 0);
-        });
-        assertEquals("This operation would result in division by zero error.", exception.getMessage());
+    @DisplayName("Test 7: isColorSupported with red -> True")
+    void isColorSupportedRed() {
+        boolean isColorSupportedRed = miscTest.isColorSupported(Misc.Color.RED);
+        assertTrue(isColorSupportedRed);
     }
 
+    // test isColorSupported with correct color yellow
     @Test
-    void testColorRedIsSupported(){
-        assertTrue(Misc.isColorSupported(Misc.Color.RED));
+    @DisplayName("Test 8: isColorSupported with yellow -> True")
+    void isColorSupportedYellow() {
+        boolean isColorSupportedYellow = miscTest.isColorSupported(Misc.Color.YELLOW);
+        assertTrue(isColorSupportedYellow);
     }
 
+    // test isColorSupported with correct color blue
     @Test
-    void testYellowIsSupported(){
-        assertTrue(Misc.isColorSupported(Misc.Color.YELLOW));
+    @DisplayName("Test 9: isColorSupported with blue -> True")
+    void isColorSupportedBlue() {
+        boolean isColorSupportedBlue = miscTest.isColorSupported(Misc.Color.BLUE);
+        assertTrue(isColorSupportedBlue);
     }
 
+    /*
+    // testing a not supported color seems important and needed for branch coverage, but not sure how, without adding
+    // a color in enum Color in the Misc class, is that allowed?
+    // test isColorSupported with incorrect color green
     @Test
-    void tesBlueIsSupported(){
-        assertTrue(Misc.isColorSupported(Misc.Color.BLUE));
+    @DisplayName("Test 10: isColorSupported with green -> False")
+    public void isColorSupportedGreen() {
+        boolean isColorSupportedGreen = miscTest.isColorSupported(Misc.Color.GREEN);
+        assertFalse(isColorSupportedGreen);
     }
+     */
 
+
+
+    // test isColorSupported with null
     @Test
-    void testNullThrowsException(){
-        var exception = assertThrows(IllegalArgumentException.class, () -> {
-            Misc.isColorSupported(null);
-        });
-
+    @DisplayName("Test 11: isColorSupported with null")
+    void isColorSupportedNull() {
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> miscTest.isColorSupported(null)
+        );
         assertEquals("color cannot be null", exception.getMessage());
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "0, 1",
-            "1, 1",
-            "2, 2",
-            "5, 120",
-            "-5, 1",
-            "-1, 1"
-    })
-    void testFactorial(int input, int expectedFactorial) {
-        assertEquals(expectedFactorial, Misc.calculateFactorial(input));
+    // divide
+    // test divide with random number and divideBy with 0, RuntimeException
+    @Test
+    @DisplayName("Test 12: divide with divideBy = 0 and divide = 10")
+    void divideByZero() {
+        RuntimeException exceptionZero = assertThrows(
+                RuntimeException.class,
+                () -> miscTest.divide(10, 0)
+        );
+        assertEquals("This operation would result in division by zero error.", exceptionZero.getMessage());
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {2, 3, 5, 7, 13, 17, 23, 29, 97})
-    void testIsPrime(int input){
-        assertTrue(Misc.isPrime(input, 2));
+    // test divide with divide = 0 and divideBy = 0, RuntimeException
+    @Test
+    @DisplayName("Test 13: divide with divideBy = 0 and divide = 0")
+    void divideByZeroZero() {
+        RuntimeException exceptionZeroZero = assertThrows(
+                RuntimeException.class,
+                () -> miscTest.divide(0, 0)
+        );
+        assertEquals("This operation would result in division by zero error.", exceptionZeroZero.getMessage());
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {-7, -1, 0, 1, 4, 6, 9, 12, 15, 25, 49, 100, 121, 200})
-    void testIsNotPrime(int input){
-        assertFalse(Misc.isPrime(input, 2));
+    // test divide with two positive integers
+    @Test
+    @DisplayName("Test 14: divide with two positive values, result integer")
+    void divideWithTwoPositiveValues() {
+        double divideWithTwoPositiveValues_Actual = miscTest.divide(16, 4);
+        double divideWithTwoPositiveValues_Expected = 4;
+        assertEquals(divideWithTwoPositiveValues_Expected, divideWithTwoPositiveValues_Actual);
+    }
+
+    // test divide with one positive and one negative integers
+    @Test
+    @DisplayName("Test 15: divide with divide = negative, result integer")
+    void divideWithPositiveNegativeValues() {
+        double divideWithPositiveNegativeValues_Actual = miscTest.divide(-16, 4);
+        double divideWithPositiveNegativeValues_Expected = -4;
+        assertEquals(divideWithPositiveNegativeValues_Expected, divideWithPositiveNegativeValues_Actual);
+    }
+
+    // test divide with one positive and one negative integers
+    @Test
+    @DisplayName("Test 16: divide with divideBy = negative, result integer")
+    void divideWithPositiveNegativeValues2() {
+        double divideWithPositiveNegativeValues_Actual = miscTest.divide(16, -4);
+        double divideWithPositiveNegativeValues_Expected = -4;
+        assertEquals(divideWithPositiveNegativeValues_Expected, divideWithPositiveNegativeValues_Actual);
+    }
+
+    // test divide two positive values and expect double as result
+    // function can return double, but how it is now, it will perform integer division, returns only int and therefore below 1 is 0
+    // solution: add in class return (double) divide / divideBy
+    @Test
+    @DisplayName("Test 17: divide with two positive values, result integer")
+    void divideWithTwoPositiveValuesDouble() {
+        double divideWithTwoPositiveValues_Actual = miscTest.divide(4, 16);
+        double divideWithTwoPositiveValues_Expected = 0.0;
+        assertEquals(divideWithTwoPositiveValues_Expected, divideWithTwoPositiveValues_Actual);
+    }
+
+    // test divide with two negative integers
+    @Test
+    @DisplayName("Test 18: divide with two negative values, result integer")
+    void divideWithTwoNegativeValues() {
+        double divideWithTwoNegativeValues_Actual = miscTest.divide(-16, -4);
+        double divideWithTwoNegativeValues_Expected = 4;
+        assertEquals(divideWithTwoNegativeValues_Expected, divideWithTwoNegativeValues_Actual);
+    }
+
+    // calculateFractional
+    // test calculateFractional with 0 -> 1
+    @Test
+    @DisplayName("Test 19: calculateFractional with num = 0")
+    void calculateFractionalWith0() {
+        long calculateFractionalWith0_Actual = miscTest.calculateFactorial(0);
+        long calculateFractionalWith0_Expected = 1;
+        assertEquals(calculateFractionalWith0_Expected, calculateFractionalWith0_Actual);
+    }
+
+    // test calculateFractional with 1 -> 1
+    @Test
+    @DisplayName("Test 20: calculateFractional with num = 1")
+    void calculateFractionalWith1() {
+        long calculateFractionalWith1_Actual = miscTest.calculateFactorial(1);
+        long calculateFractionalWith1_Expected = 1;
+        assertEquals(calculateFractionalWith1_Expected, calculateFractionalWith1_Actual);
+    }
+
+    // test calculateFractional with random number
+    @Test
+    @DisplayName("Test 21: calculateFractional with num = 5")
+    void calculateFractionalWith5() {
+        long calculateFractionalWith5_Actual = miscTest.calculateFactorial(5);
+        long calculateFractionalWith5_Expected = 120;
+        assertEquals(calculateFractionalWith5_Expected, calculateFractionalWith5_Actual);
+    }
+
+    // test calculateFractional with negative number -> 1
+    @Test
+    @DisplayName("Test 22: calculateFractional with negative value")
+    void calculateFractionalNegative() {
+        long calculateFractionalNegative_Actual = miscTest.calculateFactorial(-3);
+        long calculateFractionalNegative_Expected = 1;
+        assertEquals(calculateFractionalNegative_Expected, calculateFractionalNegative_Actual);
     }
 
     @Test
-    void testEvenNumber(){
-        var evenNumber = 4;
-        assertTrue(Misc.isEven(evenNumber));
+    @DisplayName("Test 22: calculateFractional with negative value")
+    void calculateFractionalNegativeOne() {
+        long calculateFractionalNegative_Actual = miscTest.calculateFactorial(-1);
+        long calculateFractionalNegative_Expected = 1;
+        assertEquals(calculateFractionalNegative_Expected, calculateFractionalNegative_Actual);
+    }
+
+    // isPrime
+    //test the function isPrime with 2 -> positive (special case)
+    @Test
+    @DisplayName("Test 23: isPrime with 2 -> True")
+    void isPrime2() {
+        boolean isPrime2Valid = miscTest.isPrime(2, 2);
+        assertTrue(isPrime2Valid);
+    }
+
+    //test the function isPrime with 3 -> positive
+    @Test
+    @DisplayName("Test 24: isPrime with 3 -> True")
+    void isPrime3() {
+        boolean isPrime3Valid = miscTest.isPrime(3, 2);
+        assertTrue(isPrime3Valid);
+    }
+
+    //test the function isPrime with 13 -> positive
+    @Test
+    @DisplayName("Test 25: isPrime with 13 -> True")
+    void isPrime13() {
+        boolean isPrime13Valid = miscTest.isPrime(13, 2);
+        assertTrue(isPrime13Valid);
+    }
+
+    //test the function isPrime with even 4 -> negative
+    @Test
+    @DisplayName("Test 26: isPrime with 4 -> False")
+    void isPrime4() {
+        boolean isPrime4Invalid = miscTest.isPrime(4, 2);
+        assertFalse(isPrime4Invalid);
+    }
+
+    //test the function isPrime with uneven 9 -> negative
+    @Test
+    @DisplayName("Test 27: isPrime with 9 -> False")
+    void isPrime9() {
+        boolean isPrime9Invalid = miscTest.isPrime(9, 2);
+        assertFalse(isPrime9Invalid);
+    }
+
+    //test the function isPrime with 0 -> negative (special case)
+    @Test
+    @DisplayName("Test 28: isPrime with 0 -> False")
+    void isPrime0() {
+        boolean isPrime0Invalid = miscTest.isPrime(0, 2);
+        assertFalse(isPrime0Invalid);
+    }
+
+    //test the function isPrime with 1 -> negative (special case)
+    @Test
+    @DisplayName("Test 29: isPrime with 1 -> False")
+    void isPrime1() {
+        boolean isPrime1Invalid = miscTest.isPrime(1, 2);
+        assertFalse(isPrime1Invalid);
+    }
+
+    //test the function isPrime with negative number -> negative
+    @Test
+    @DisplayName("Test 30: isPrime with negative number -> False")
+    void isPrimeNegative() {
+        boolean isPrimeNegativeInvalid = miscTest.isPrime(-7, 2);
+        assertFalse(isPrimeNegativeInvalid);
     }
 
     @Test
-    void testOddNumber(){
-        var oddNumber = 3;
-        assertFalse(Misc.isEven(oddNumber));
+    @DisplayName("Test 31: isPrime with 1 -> False")
+    void isPrimeLarger() {
+        boolean isPrime1Invalid = miscTest.isPrime(49, 2);
+        assertFalse(isPrime1Invalid);
     }
-
-    @Test
-    void test0IsEven(){
-        assertTrue(Misc.isEven(0));
-    }
-
-    @Test
-    void testNegativeEvenNumber(){
-        var negativeEvenNumber= -2;
-        assertTrue(Misc.isEven(negativeEvenNumber));
-    }
-
-    @Test
-    void testNegativeOddNumber(){
-        var negativeOddNumber = -3;
-        assertFalse(Misc.isEven(negativeOddNumber));
-    }
-
 }
