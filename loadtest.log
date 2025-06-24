@@ -1,0 +1,170 @@
+2025-06-24 15:42:55,695 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 7684 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:42:55,698 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:42:57,509 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 2.182 seconds (JVM running for 3.584)
+2025-06-24 15:42:57,908 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Starting CustomerRegistrationControllerTest on katsches_laptop with PID 7684 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:42:57,911 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:42:58,249 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Started CustomerRegistrationControllerTest in 0.356 seconds (JVM running for 4.324)
+2025-06-24 15:42:58,305 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] Starting CustomerRepositoryTest on katsches_laptop with PID 7684 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:42:58,306 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:42:59,410 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:42:59,512 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2025-06-24 15:42:59,513 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2025-06-24 15:42:59,567 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2025-06-24 15:42:59,726 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:43:00,263 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1570db98'
+2025-06-24 15:43:00,663 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] Started CustomerRepositoryTest in 2.372 seconds (JVM running for 6.738)
+2025-06-24 15:43:00,732 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2025-06-24 15:43:01,054 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-6] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:23,939 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:23,940 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:25,944 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:25,945 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:26,102 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:27,179 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2025-06-24 15:54:27,530 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-06-24 15:54:27,641 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:27,726 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2025-06-24 15:54:27,727 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2025-06-24 15:54:27,853 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2025-06-24 15:54:27,987 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:28,590 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:29,970 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 6.36 seconds (JVM running for 7.623)
+2025-06-24 15:54:32,376 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:32,437 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8080-exec-1] HHH000397: Using ASTQueryTranslatorFactory
+2025-06-24 15:54:32,609 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:32,611 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2025-06-24 15:54:32,614 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2025-06-24 15:54:32,654 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:32,654 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:32,966 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:32,966 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:32,995 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:33,439 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Starting...
+2025-06-24 15:54:33,441 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Start completed.
+2025-06-24 15:54:33,456 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:33,465 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:33,496 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:33,901 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 1.267 seconds (JVM running for 11.554)
+2025-06-24 15:54:34,814 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:34,833 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8080-exec-1] HHH000397: Using ASTQueryTranslatorFactory
+2025-06-24 15:54:35,469 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:35,470 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Shutdown initiated...
+2025-06-24 15:54:35,471 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Shutdown completed.
+2025-06-24 15:54:35,497 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:35,498 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:35,762 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:35,763 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:35,783 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:36,174 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-3 - Starting...
+2025-06-24 15:54:36,175 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-3 - Start completed.
+2025-06-24 15:54:36,188 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:36,197 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:36,222 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:36,502 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 1.019 seconds (JVM running for 14.157)
+2025-06-24 15:54:36,969 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:37,061 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:37,063 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-3 - Shutdown initiated...
+2025-06-24 15:54:37,063 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-3 - Shutdown completed.
+2025-06-24 15:54:37,088 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:37,089 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:37,329 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:37,330 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:37,351 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:37,715 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-4 - Starting...
+2025-06-24 15:54:37,716 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-4 - Start completed.
+2025-06-24 15:54:37,726 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:37,735 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:37,757 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:38,040 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 0.965 seconds (JVM running for 15.693)
+2025-06-24 15:54:38,359 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:38,405 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:38,406 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-4 - Shutdown initiated...
+2025-06-24 15:54:38,407 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-4 - Shutdown completed.
+2025-06-24 15:54:38,433 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:38,433 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:38,647 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:38,647 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:38,667 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:39,043 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-5 - Starting...
+2025-06-24 15:54:39,044 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-5 - Start completed.
+2025-06-24 15:54:39,054 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:39,062 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:39,083 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:39,331 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 0.913 seconds (JVM running for 16.984)
+2025-06-24 15:54:39,676 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:39,717 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:39,718 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-5 - Shutdown initiated...
+2025-06-24 15:54:39,719 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-5 - Shutdown completed.
+2025-06-24 15:54:39,741 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Starting CustomerManagementControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:39,743 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:39,956 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:39,956 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:39,975 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:40,304 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-6 - Starting...
+2025-06-24 15:54:40,305 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-6 - Start completed.
+2025-06-24 15:54:40,316 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:40,322 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:40,341 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:40,592 INFO com.softwaretesting.testing.customerManagement.controller.CustomerManagementControllerTest [main] Started CustomerManagementControllerTest in 0.862 seconds (JVM running for 18.246)
+2025-06-24 15:54:40,924 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:41,098 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:41,099 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-6 - Shutdown initiated...
+2025-06-24 15:54:41,099 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-6 - Shutdown completed.
+2025-06-24 15:54:41,125 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Starting CustomerRegistrationControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:41,125 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:41,328 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:41,328 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:41,346 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:41,690 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-7 - Starting...
+2025-06-24 15:54:41,691 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-7 - Start completed.
+2025-06-24 15:54:41,702 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:41,709 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:41,728 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:41,957 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Started CustomerRegistrationControllerTest in 0.844 seconds (JVM running for 19.611)
+2025-06-24 15:54:42,251 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:42,276 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:42,277 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-7 - Shutdown initiated...
+2025-06-24 15:54:42,277 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-7 - Shutdown completed.
+2025-06-24 15:54:42,301 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Starting CustomerRegistrationControllerTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:42,302 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:42,486 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2025-06-24 15:54:42,486 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2025-06-24 15:54:42,503 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2025-06-24 15:54:42,828 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-8 - Starting...
+2025-06-24 15:54:42,829 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-8 - Start completed.
+2025-06-24 15:54:42,839 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:42,847 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:42,865 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:43,130 INFO com.softwaretesting.testing.customerRegistration.controller.CustomerRegistrationControllerTest [main] Started CustomerRegistrationControllerTest in 0.841 seconds (JVM running for 20.783)
+2025-06-24 15:54:43,430 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 15:54:43,452 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-24 15:54:43,453 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-8 - Shutdown initiated...
+2025-06-24 15:54:43,454 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-8 - Shutdown completed.
+2025-06-24 15:54:43,505 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] Starting CustomerRepositoryTest on katsches_laptop with PID 19032 (started by kaczm in C:\Users\kaczm\Documents\Studium\PraticalSoftwareTesting\Code\ci\software-testing-ss2025)
+2025-06-24 15:54:43,506 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] No active profile set, falling back to default profiles: default
+2025-06-24 15:54:43,611 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2025-06-24 15:54:43,618 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-24 15:54:43,637 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [main] HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b5b2400'
+2025-06-24 15:54:43,680 INFO com.softwaretesting.testing.dao.CustomerRepositoryTest [main] Started CustomerRepositoryTest in 0.191 seconds (JVM running for 21.333)
+2025-06-24 15:54:43,687 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2025-06-24 15:54:43,811 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-131] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
