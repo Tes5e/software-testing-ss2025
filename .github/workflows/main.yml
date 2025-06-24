@@ -63,7 +63,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Generate Jacoco Report (Unit Tests)
-        run: mvn jacoco:report
+        run: mvn test jacoco:report
       - name: Upload Jacoco Report
         uses: actions/upload-artifact@v4
         with:
