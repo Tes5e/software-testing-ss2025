@@ -31,14 +31,11 @@ jobs:
           distribution: 'temurin'
       - name: Build and Run Unit Tests
         run: mvn clean test
-      - name: Copy Unit Test Reports to output/
-        run: mkdir -p output && cp -r target/surefire-reports output/
-      - name: Upload output folder (Unit Tests)
+      - name: Upload JUnit Report
         uses: actions/upload-artifact@v4
         with:
-          name: output-unit-tests
-          path: output/
-
+          name: unit-test-report
+          path: target/surefire-reports/
 
   jacoco:
     runs-on: ubuntu-latest
