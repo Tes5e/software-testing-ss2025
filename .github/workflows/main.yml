@@ -22,10 +22,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: |
-            target/
-            src/
-  
+          path: target/
+
   unit-tests:
     runs-on: ubuntu-latest
     needs: build
@@ -47,6 +45,11 @@ jobs:
         with:
           name: unit-test-report
           path: target/surefire-reports/
+      - name: Upload JaCoCo exec file
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-exec
+          path: target/jacoco.exec
 
   jacoco:
     runs-on: ubuntu-latest
@@ -57,14 +60,19 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
+      - name: Download JaCoCo exec data
+        uses: actions/download-artifact@v4
+        with:
+          name: jacoco-exec
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Generate Jacoco Report (Unit Tests)
-        run: mvn test jacoco:report
-      - name: Upload Jacoco Report
+      # Erzeuge Coverage-Report auf Basis der vorhandenen Unit-Test-Ergebnisse
+      - name: Generate JaCoCo Report (Unit Tests)
+        run: mvn jacoco:report
+      - name: Upload JaCoCo HTML-Report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
@@ -85,7 +93,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Run PIT Mutation Coverage
-        run: mvn test org.pitest:pitest-maven:mutationCoverage
+        run: mvn org.pitest:pitest-maven:mutationCoverage
       - name: Upload PIT Report
         uses: actions/upload-artifact@v4
         with:
