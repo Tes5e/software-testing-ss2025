@@ -85,7 +85,7 @@ jobs:
           java-version: '19'
           distribution: 'temurin'
       - name: Run Integration Tests (Failsafe)
-        run: mvn failsafe:integration-test failsafe:verify
+        run:  mvn clean verify
       - name: Upload Integration Test Reports
         uses: actions/upload-artifact@v4
         with:
