@@ -51,7 +51,7 @@ class CustomerManagementServiceImpTest {
         verify(customerRepositoryExternal).findByUserName(customer.getUserName());
         verify(customerValidatorExternal).validate404(Optional.of(customer), "User-Name", customer.getUserName());
     }
-
+/* test*/
     @Test
     void throwsErrorMessageWhenCustomerIsNotFoundByUserName(){
         when(customerRepositoryExternal.findByUserName(customer.getUserName())).thenReturn(Optional.empty());
